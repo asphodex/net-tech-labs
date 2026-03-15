@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="calculator">
+    <h1 class="calculator__title">Калькулятор</h1>
+
+    <div class="calculator__section">
+        <label class="calculator__label">Входные данные:</label>
+
+        <div class="type-selector">
+            <label for="inputType">Тип</label>
+            <select class="type-selector__select" id="inputType">
+                <option value="sides-angle">Две стороны и угол между ними</option>
+                <option value="three-sides">Три стороны</option>
+            </select>
+            <button class="button button--show" onclick="showInputType()">Показать</button>
+        </div>
+    </div>
+
+    <div class="triangle-image" id="imageSidesAngle">
+        <img class="triangle-image__image" src="sides_angle.png" alt="2 стороны и угол">
+    </div>
+    <div class="triangle-image triangle-image--hidden" id="imageThreeSides">
+        <img class="triangle-image__image" src="three_sides.png" alt="3 стороны">
+    </div>
+
+    <div class="error-box" id="generalError"></div>
+
+    <div class="calculator__section" id="inputsSidesAngle">
+        <label class="calculator__label">Введите данные:</label>
+        <div class="input-group">
+            <div class="input-field">
+                <label class="input-field__label" for="sideA">Сторона A: </label>
+                <input class="input-field__input" type="number" id="sideA" step="any" min="0"
+                       placeholder="Введите значение">
+                <span class="input-field__error" id="sideAError"></span>
+            </div>
+            <div class="input-field">
+                <label class="input-field__label" for="sideB">Сторона B: </label>
+                <input class="input-field__input" type="number" id="sideB" step="any" min="0"
+                       placeholder="Введите значение">
+                <span class="input-field__error" id="sideBError"></span>
+            </div>
+            <div class="input-field">
+                <label class="input-field__label" for="angleGamma">Угол между сторонами: </label>
+                <input class="input-field__input" type="number" id="angleGamma" step="any" min="0" max="180"
+                       placeholder="Введите значение (от 0 до 180)">
+                <span class="input-field__error" id="angleGammaError"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="calculator__section calculator__section--hidden" id="inputsThreeSides">
+        <label class="calculator__label">Введите данные:</label>
+        <div class="input-group">
+            <div class="input-field">
+                <label class="input-field__label" for="side3A">Сторона A: </label>
+                <input class="input-field__input" type="number" id="side3A" step="any" min="0"
+                       placeholder="Введите значение">
+                <span class="input-field__error" id="side3AError"></span>
+            </div>
+            <div class="input-field">
+                <label class="input-field__label" for="side3B">Сторона B: </label>
+                <input class="input-field__input" type="number" id="side3B" step="any" min="0"
+                       placeholder="Введите значение">
+                <span class="input-field__error" id="side3BError"></span>
+            </div>
+            <div class="input-field">
+                <label class="input-field__label" for="side3C">Сторона C: </label>
+                <input class="input-field__input" type="number" id="side3C" step="any" min="0"
+                       placeholder="Введите значение">
+                <span class="input-field__error" id="side3CError"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="calculator__section">
+        <label class="calculator__label">Выберите вычисляемые характеристики</label>
+        <div class="checkbox-group">
+            <label class="checkbox-item">
+                <input class="checkbox-item__input" type="checkbox" id="calcBisectors" checked>
+                <span class="checkbox-item__text">Биссектрисы</span>
+            </label>
+            <label class="checkbox-item">
+                <input class="checkbox-item__input" type="checkbox" id="calcHeights" checked>
+                <span class="checkbox-item__text">Высоты</span>
+            </label>
+            <label class="checkbox-item">
+                <input class="checkbox-item__input" type="checkbox" id="calcRadius" checked>
+                <span class="checkbox-item__text">Радиус описанной окружности</span>
+            </label>
+            <label class="checkbox-item">
+                <input class="checkbox-item__input" type="checkbox" id="calcArea" checked>
+                <span class="checkbox-item__text">Площадь</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="button-group">
+        <button class="button button--calculate" onclick="calculate()">Вычислить</button>
+        <button class="button button--clear" onclick="clearInputs()">Очистить</button>
+    </div>
+
+    <div class="results" id="results">
+        <h3 class="results__title">Результаты вычислений:</h3>
+        <div id="resultsContent"></div>
+    </div>
+</div>
+</body>
+</html>

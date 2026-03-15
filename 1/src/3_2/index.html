@@ -1,0 +1,118 @@
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Макет страницы</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+    <nav>
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Лента новостей</a></li>
+            <li><a href="#">База данных</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <div class="top-section">
+            <div class="large-box"><img src="img/attractions/golden_bridge.png" alt="Золотой мост" style="width: 100%; height: 100%; object-fit: cover;"></div>
+            <div class="right-boxes">
+                <div class="medium-box"><img src="img/attractions/russkiy_bridge.png" alt="Русский мост" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div class="small-box"><img src="img/attractions/vladivostok_fortress.png" alt="Владивостокская крепость" style="width: 100%; height: 100%; object-fit: cover;"></div>
+            </div>
+        </div>
+        <div class="bottom-strip"><img src="img/attractions/tokarevsky_lighthouse.png" alt="Токаревский маяк" style="width: 100%; height: 100%; object-fit: cover;"></div>
+    </div>
+
+    <div class="main-content">
+        <div class="left-column">
+            <div class="left-column-h">
+                <h2>Достопримечательности Владивостока</h2>
+            </div>
+            <div class="content-row">
+                <div class="text-block">
+                    <div class="left-column-p">
+                        <p><b>Золотой мост</b> — один из символов современного Владивостока, вантовый мост через бухту Золотой Рог, открытый в 2012 году к саммиту АТЭС. Его главный пролёт длиной 737 метров делает его одним из самых больших вантовых мостов в мире. Две высокие опоры-пилоны высотой 226 метров видны из многих точек города и стали его визитной карточкой. Мост соединил центр города с его южными районами, значительно улучшив транспортную доступность и сократив время в пути. Для жителей и гостей Владивостока он стал не только важной транспортной артерией, но и популярной смотровой площадкой — с моста открываются потрясающие виды на город и бухту.</p>
+                    </div>
+                </div>
+                <div class="text-block">
+                    <div class="left-column-p">
+                        <p>Особенно впечатляюще мост выглядит вечером, когда включается эффектная подсветка, превращая инженерное сооружение в произведение искусства. Яркие светодиодные огни создают магическую атмосферу, отражаясь в водах бухты и делая мост видимым из самых отдаленных районов города. Многоцветная иллюминация меняется в зависимости от времени года и праздников, создавая неповторимые световые шоу. В зимние месяцы мост особенно красив на фоне заснеженных сопок, а летом его силуэт эффектно выделяется на фоне ярко-синего неба и изумрудной зелени приморских лесов.</p>
+                    </div>
+                    <button class="button" id="more-button-1">Подробнее</button>
+                </div>
+                <div class="image-section"><img class="image" id="left-image" src="img/attractions/millionka.png" alt="Миллионка"></div>
+            </div>
+
+            <div class="bottom-block">
+                <div class="left-column-h" id="left-column-h-2">
+                    <h2>Миллионка</h2>
+                </div>
+                <div class="bottom-content">
+                    <div class="bottom-image"><img class="image" src="img/attractions/fokin_admiral.png" alt="Памятник адмиралу Фокину"></div>
+                    <div class="bottom-text">
+                        <div>
+                            <p><b>Миллионка</b> — исторический район Владивостока, известный как "владивостокский Арбат", представляет собой уникальный квартал с богатой культурной и торговой историей. Этот живописный район с узкими улочками и старинными зданиями когда-то был центром китайской общины города и местом процветающей торговли. Сегодня Миллионка привлекает туристов своей аутентичной атмосферой, многочисленными кафе, сувенирными лавками и художественными галереями. Здесь можно прогуляться по мощеным улицам, полюбоваться на сохранившуюся архитектуру начала XX века и ощутить дух старого Владивостока.</p>
+                        </div>
+                        <button class="button">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="card">
+                <div class="card-image pink"><img class="image rounded" src="img/attractions/rickord_island.png" alt="Остров Рикорда"></div>
+                <div class="card-content">
+                    <h3>Остров Рикорда</h3>
+                    <div class="card-lines">
+                        <p>Маленький остров в заливе Петра Великого с красивыми песчаными пляжами.</p>
+                    </div>
+                    <button class="button">Подробнее</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image peach"><img class="image rounded" src="img/attractions/golden_bridge.png" alt="Золотой мост"></div>
+                <div class="card-content">
+                    <h3>Золотой мост</h3>
+                    <div class="card-lines">
+                        <p>Символ современного Владивостока с потрясающей подсветкой.</p>
+                    </div>
+                    <button class="button">Подробнее</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image cyan"><img class="image rounded" src="img/attractions/tokarevsky_lighthouse.png" alt="Токаревский маяк"></div>
+                <div class="card-content">
+                    <h3>Токаревский маяк</h3>
+                    <div class="card-lines">
+                        <p>Один из старейших маяков Дальнего Востока, построенный в 1876 году.</p>
+                    </div>
+                    <button class="button">Подробнее</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image blue"><img class="image rounded" src="img/attractions/vladivostok_fortress.png" alt="Владивостокская крепость"></div>
+                <div class="card-content">
+                    <h3>Владивостокская крепость</h3>
+                    <div class="card-lines">
+                        <p>Комплекс фортификационных сооружений XIX-XX веков, музей под открытым небом.</p>
+                    </div>
+                    <button class="button">Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>2025 год, Б9123-09.03.04, Цветков А.Д.</p>
+    </footer>
+    </body>
+    </html>

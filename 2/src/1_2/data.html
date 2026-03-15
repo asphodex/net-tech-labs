@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>База данных - Достопримечательности Владивостока</title>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+<p>
+    <a href="index.html">Главная</a> |
+    <a href="data.html">База данных</a>
+</p>
+
+<h1>База данных достопримечательностей</h1>
+
+<details>
+    <summary><b>График</b></summary>
+    <form>
+        <p><b>Значение по оси OX</b></p>
+        <p>
+            <input type="radio" name="ox" value="type">Район<br>
+            <input type="radio" name="ox" value="type">Тип<br>
+        </p>
+        <p><b>Значение по оси OY</b></p>
+        <p>
+            <input type="checkbox" name="result1" value="center">Количество достопримечательностей<br>
+            <input type="checkbox" name="result2" value="russkiy_bridge">Минимальный год<br>
+        </p>
+        <p><input type="submit" value="Построить"></p>
+    </form>
+</details>
+
+<details>
+    <summary><b>Фильтр</b></summary>
+    <form id="filter-form">
+        <p>Название: <input type="text" name="name"></p>
+        <p>Год: от <input type="number" name="year_from" min="0" max="2030"> до <input type="number" name="year_to"
+                                                                                       min="0" max="2030"></p>
+        <p>Адрес: <input type="text" name="address"></p>
+        <p>Район: <input type="text" name="district"></p>
+        <p>Тип: <input type="text" name="type"></p>
+        <p>Широта: от <input type="number" name="lat_from" min="0" step="0.0001"> до <input type="number" name="lat_to"
+                                                                                            min="0" step="0.0001"></p>
+        <p>Долгота: от <input type="number" name="lon_from" min="0" step="0.0001"> до <input type="number" name="lon_to"
+                                                                                             min="0" step="0.0001"></p>
+        <p><input type="submit" value="Найти"></p>
+    </form>
+</details>
+
+<details>
+    <summary><b>Сортировка</b></summary>
+    <form id="sort-form">
+        <p>
+            Первый уровень:
+            <select name="sort1">
+                <option value="none">Нет</option>
+                <option value="name">Название</option>
+                <option value="year">Год</option>
+                <option value="address">Адрес</option>
+                <option value="district">Район</option>
+                <option value="type">Тип</option>
+                <option value="latitude">Широта</option>
+                <option value="longitude">Долгота</option>
+            </select>
+            по убыванию? <input type="checkbox" name="sort1_desc">
+        </p>
+        <p>
+            Второй уровень:
+            <select name="sort2">
+                <option value="none">Нет</option>
+                <option value="name">Название</option>
+                <option value="year">Год</option>
+                <option value="address">Адрес</option>
+                <option value="district">Район</option>
+                <option value="type">Тип</option>
+                <option value="latitude">Широта</option>
+                <option value="longitude">Долгота</option>
+            </select>
+            по убыванию? <input type="checkbox" name="sort2_desc">
+        </p>
+        <p>
+            Третий уровень:
+            <select name="sort3">
+                <option value="none">Нет</option>
+                <option value="name">Название</option>
+                <option value="year">Год</option>
+                <option value="address">Адрес</option>
+                <option value="district">Район</option>
+                <option value="type">Тип</option>
+                <option value="latitude">Широта</option>
+                <option value="longitude">Долгота</option>
+            </select>
+            по убыванию? <input type="checkbox" name="sort3_desc">
+        </p>
+        <p><input type="submit" value="Сортировать"></p>
+    </form>
+</details>
+
+<hr>
+
+<table class="places-table">
+    <thead class="places-table__head">
+    <tr class="places-table__row">
+        <th>Название</th>
+        <th>Год</th>
+        <th>Адрес</th>
+        <th>Район</th>
+        <th>Тип</th>
+        <th>Широта</th>
+        <th>Долгота</th>
+    </tr>
+    </thead>
+    <tbody class="places-table__body" id="places-table__body">
+
+    </tbody>
+</table>
+
+</body>
+</html>
