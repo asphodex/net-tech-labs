@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Лабораторная работа 3</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://d3js.org/d3.v7.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/chart.js"></script>
+</head>
+<body>
+<h3>Список самых высоких зданий</h3>
+
+<div id="settings">
+    <div>
+        <p>Значение по оси OX:<br>
+            <input type="radio" name="keyX" value="Страна" checked>
+            <label for="keyX">Страна</label><br>
+            <input type="radio" name="keyX" value="Год">
+            <label for="keyX">Год</label>
+        </p>
+    </div>
+    <div id="err">
+        <p>Значение по оси OY:<br>
+            <input type="checkbox" id="maxY" value="Max">
+            <label for="maxY">Max</label><br>
+            <input type="checkbox" id="minY" value="Min">
+            <label for="minY">Min</label><br>
+        </p>
+    </div>
+    <div>
+        <p>Тип графика:<br>
+            <select id="typeGraph">
+                <option value="dot" selected>Точечная</option>
+                <option value="bar">Гистограмма</option>
+            </select>
+        </p>
+    </div>
+    <div class="button">
+        <input type="button" id="buildBtn" value="Построить" >
+    </div>
+</div>
+
+<svg>
+</svg>
+
+<div class="button">
+    <input type="button" id="tableBtn" value="Скрыть таблицу" >
+</div>
+
+<table id="build"></table>
+</body>
+</html>
