@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // кнопка
     const buildBtn = settings.querySelector("#buildBtn");
 
+    minY.addEventListener("change", clearErr);
+    maxY.addEventListener("change", clearErr);
+
     const err = document.getElementById("err");
     var selectedChart = 0;
 

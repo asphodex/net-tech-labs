@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа 2</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layout">
+        <div class="svg-container">
+            <svg id="canvas" viewBox="0 0 600 500"></svg>
+        </div>
+        <div class="controls">
+            <div class="field">
+                <label>Длительность анимации</label>
+                <input type="number" id="duration" value="4000" min="1" max="20000" step="500">
+            </div>
+            <div class="field">
+                <label>Масштаб в начале</label>
+                <input type="number" id="scaleStart" value="1" min="-50" max="50" step="0.1">
+            </div>
+            <div class="field">
+                <label>Масштаб в конце</label>
+                <input type="number" id="scaleEnd" value="2" min="-50" max="50" step="0.1">
+            </div>
+            <div class="field">
+                <label>Угол в начале</label>
+                <input type="number" id="rotationStart" value="0" min="-3600" max="3600" step="15">
+            </div>
+            <div class="field">
+                <label>Угол в конце</label>
+                <input type="number" id="rotationEnd" value="360" min="-3600" max="3600" step="15">
+            </div>
+            <div class="field">
+                <label>Тип анимации</label>
+                <select id="easing">
+                    <option value="easeLinear">Linear</option>
+                    <option value="easeCubicInOut" selected>Cubic In-Out</option>
+                    <option value="easeBounce">Bounce</option>
+                    <option value="easeElastic">Elastic</option>
+                </select>
+            </div>
+
+            <label class="checkbox-field">
+                <input type="checkbox" id="showTrajectory" checked>
+                <span>Показывать траекторию</span>
+            </label>
+
+            <label class="checkbox-field">
+                <input type="checkbox" id="enableRotation" checked>
+                <span>Включить вращение</span>
+            </label>
+
+            <label class="checkbox-field">
+                <input type="checkbox" id="enableScale" checked>
+                <span>Включить масштабирование</span>
+            </label>
+
+            <div class="buttons">
+                <button class="btn btn-draw" onclick="drawFigure()">Нарисовать фигуру</button>
+                <button class="btn btn-start" onclick="startAnimation()">▶ Запустить анимацию</button>
+                <button class="btn btn-clear" onclick="clearCanvas()">✕ Очистить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

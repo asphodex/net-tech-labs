@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 24px;
+}
+
+.layout {
+    display: flex;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.svg-container {
+    flex: 1;
+    min-width: 500px;
+    border: 1px solid;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.svg-container svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Лабораторная работа 4</title>
+    <script src="https://d3js.org/d3.v7.min.js"> </script>
+    <script src="js/main.js"></script>
+    <script src="js/image.js"></script>
+    <script src="js/path.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <form id="setting">
+        <div class="settings">
+            <div class="settings--form">
+                <p>Координаты рисунка<br>
+                    <label for="cx">x: </label>
+                    <input type="number" id="cx" value="300" max=600 min=0><br>
+                    <label for="cy">y: </label>
+                    <input type="number" id="cy" value="300" max=600 min=0>
+                </p>
+            </div>
+            <div class="settings--form">
+                <p>Масштаб<br>
+                    <label for="sx">по x: </label>
+                    <input type="number" id="sx" value="2" max=5 min=0.1><br>
+                    <label for="sy">по y: </label>
+                    <input type="number" id="sy" value="2" max=5 min=0.1>
+                </p>
+            </div>
+            <div>
+                <p>Поворот<br>
+                    <label for="angle">угол: </label>
+                    <input type="number" id="angle" value="0" max=360 min=0><br>
+                </p>
+            </div>
+        </div>
+        <input id="drawBtn" type="button" value="Нарисовать">
+        <input id="clearBtn" type="button" value="Очистить">
+    </form>
+
+    <form id="settingAnim" hidden>
+        <div class="settings">
+            <div class="settings--form" id="settingsAnim_PathMove" hidden>
+                <p>Пути перемещения<br>
+                    <label for="pathMoveType">Тип: </label><select id="pathMoveType">
+                        <option value="0">Буквой "Г"</option>
+                        <option value="1">По кругу</option>
+                    </select>
+                </p>
+            </div>
+            <div class="settings--form" id="settingsAnim_Coords">
+                <p>Координаты рисунка<br>
+                    <label for="cx_from">x: </label>
+                    <input type="number" id="cx_from" value="100" max=600 min=0>
+                    <label for="cx_to">до</label>
+                    <input type="number" id="cx_to" value="300" max=600 min=0><br>
+                    <label for="cy_from">y: </label>
+                    <input type="number" id="cy_from" value="100" max=600 min=0>
+                    <label for="cy_to">до</label>
+                    <input type="number" id="cy_to" value="300" max=600 min=0>
+                </p>
+            </div>
+            <div class="settings--form" id="settingsAnim_Scale">
+                <p>Масштаб<br>
+                    <label for="sx_from">по x: </label>
+                    <input type="number" id="sx_from" value="1" max=5 min=0.1>
+                    <label for="sx_to">до</label>
+                    <input type="number" id="sx_to" value="1.5" max=5 min=0.1><br>
+                    <label for="sy_from">по y: </label>
+                    <input type="number" id="sy_from" value="1" max=5 min=0.1>
+                    <label for="sy_to">до</label>
+                    <input type="number" id="sy_to" value="1.5" max=5 min=0.1>
+                </p>
+            </div>
+            <div id="settingsAnim_Rotate">
+                <p>Поворот<br>
+                    <label for="angle_from">угол: </label>
+                    <input type="number" id="angle_from" value="0" max=360 min=0>
+                    <label for="angle_to">до</label>
+                    <input type="number" id="angle_to" value="180" max=360 min=0>
+                </p>
+            </div>
+        </div>
+        <input id="animateBtn" type="button" value="Анимировать">
+        <input id="clearBtnAnim" type="button" value="Очистить">
+    </form>
+
+    
+    <p>
+        <input id="animToggle" type="checkbox">
+        <label for="animToggle">Включить анимацию?</label>
+        <label for="animType">Тип: </label>
+        <select id="animType" hidden>
+            <option value="linear">linear</option>
+            <option value="elastic">elastic</option>
+            <option value="bounce">bounce</option>
+        </select>
+    </p>
+
+    <p id="pathMoveText" hidden>
+        <input id="pathMoveToggle" type="checkbox">
+        <label for="pathMoveToggle">Перемещение вдоль пути?</label>
+    </p>
+        
+
+    <svg class="container"></svg>
+
+    <ol type="1" id="list">
+        
+    </ol>
+</body>
+</html>

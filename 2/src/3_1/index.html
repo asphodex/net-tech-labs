@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Лабораторная работа 3</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="http://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
     <script src="js/table.js"></script>
@@ -16,10 +16,15 @@
 <div id="settings">
     <div>
         <p>Значение по оси OX:<br>
-            <input type="radio" name="keyX" value="Страна" checked>
-            <label for="keyX">Страна</label><br>
-            <input type="radio" name="keyX" value="Год">
-            <label for="keyX">Год</label>
+            <label>
+                Страна
+                <input type="radio" name="keyX" value="Страна" checked>
+            </label>
+            <br>
+            <label>
+                Год
+                <input type="radio" name="keyX" value="Год">
+            </label>
         </p>
     </div>
     <div id="err">

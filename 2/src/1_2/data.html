@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>База данных - Достопримечательности Владивостока</title>
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/sort.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
 <p>
@@ -19,102 +22,73 @@
     <form>
         <p><b>Значение по оси OX</b></p>
         <p>
-            <input type="radio" name="ox" value="type">Район<br>
+            <input type="radio" name="ox" value="district">Район<br>
             <input type="radio" name="ox" value="type">Тип<br>
         </p>
         <p><b>Значение по оси OY</b></p>
         <p>
-            <input type="checkbox" name="result1" value="center">Количество достопримечательностей<br>
-            <input type="checkbox" name="result2" value="russkiy_bridge">Минимальный год<br>
+            <input type="checkbox" name="result1" value="count">Количество достопримечательностей<br>
+            <input type="checkbox" name="result2" value="minyear">Минимальный год<br>
         </p>
         <p><input type="submit" value="Построить"></p>
     </form>
 </details>
 
-<details>
-    <summary><b>Фильтр</b></summary>
-    <form id="filter-form">
-        <p>Название: <input type="text" name="name"></p>
-        <p>Год: от <input type="number" name="year_from" min="0" max="2030"> до <input type="number" name="year_to"
-                                                                                       min="0" max="2030"></p>
-        <p>Адрес: <input type="text" name="address"></p>
-        <p>Район: <input type="text" name="district"></p>
-        <p>Тип: <input type="text" name="type"></p>
-        <p>Широта: от <input type="number" name="lat_from" min="0" step="0.0001"> до <input type="number" name="lat_to"
-                                                                                            min="0" step="0.0001"></p>
-        <p>Долгота: от <input type="number" name="lon_from" min="0" step="0.0001"> до <input type="number" name="lon_to"
-                                                                                             min="0" step="0.0001"></p>
-        <p><input type="submit" value="Найти"></p>
-    </form>
-</details>
+<form id="filter">
+    <p>
+        <label for="name">Название:</label>
+        <input type="text" id="name">
+    </p>
+    <p>
+        <label for="yearFrom">Год:</label>
+        от <input type="number" id="yearFrom">
+        до <input type="number" id="yearTo">
+    </p>
+    <p>
+        <label for="address">Адрес:</label>
+        <input type="text" id="address">
+    </p>
+    <p>
+        <label for="district">Район:</label>
+        <input type="text" id="district">
+    </p>
+    <p>
+        <label for="type">Тип:</label>
+        <input type="text" id="type">
+    </p>
+    <p>
+        <label for="latFrom">Широта:</label>
+        от <input type="number" id="latFrom" step="0.0001">
+        до <input type="number" id="latTo" step="0.0001">
+    </p>
+    <p>
+        <label for="lonFrom">Долгота:</label>
+        от <input type="number" id="lonFrom" step="0.0001">
+        до <input type="number" id="lonTo" step="0.0001">
+    </p>
+    <input type="button" value="Найти" id="filter__button">
+    <input type="button" value="Очистить фильтры" id="filter__button-clear">
+</form>
 
-<details>
-    <summary><b>Сортировка</b></summary>
-    <form id="sort-form">
-        <p>
-            Первый уровень:
-            <select name="sort1">
-                <option value="none">Нет</option>
-                <option value="name">Название</option>
-                <option value="year">Год</option>
-                <option value="address">Адрес</option>
-                <option value="district">Район</option>
-                <option value="type">Тип</option>
-                <option value="latitude">Широта</option>
-                <option value="longitude">Долгота</option>
-            </select>
-            по убыванию? <input type="checkbox" name="sort1_desc">
-        </p>
-        <p>
-            Второй уровень:
-            <select name="sort2">
-                <option value="none">Нет</option>
-                <option value="name">Название</option>
-                <option value="year">Год</option>
-                <option value="address">Адрес</option>
-                <option value="district">Район</option>
-                <option value="type">Тип</option>
-                <option value="latitude">Широта</option>
-                <option value="longitude">Долгота</option>
-            </select>
-            по убыванию? <input type="checkbox" name="sort2_desc">
-        </p>
-        <p>
-            Третий уровень:
-            <select name="sort3">
-                <option value="none">Нет</option>
-                <option value="name">Название</option>
-                <option value="year">Год</option>
-                <option value="address">Адрес</option>
-                <option value="district">Район</option>
-                <option value="type">Тип</option>
-                <option value="latitude">Широта</option>
-                <option value="longitude">Долгота</option>
-            </select>
-            по убыванию? <input type="checkbox" name="sort3_desc">
-        </p>
-        <p><input type="submit" value="Сортировать"></p>
-    </form>
-</details>
+<form id="sort">
+    <p>Сортировать по</p>
+    <p>
+        <select id="fieldsFirst"></select>
+        по убыванию? <input type="checkbox" id="fieldsFirstDesc">
+    </p>
+    <p>
+        <select id="fieldsSecond"></select>
+        по убыванию? <input type="checkbox" id="fieldsSecondDesc">
+    </p>
+    <p>
+        <select id="fieldsThird"></select>
+        по убыванию? <input type="checkbox" id="fieldsThirdDesc">
+    </p>
+    <input type="button" value="Сортировать">
+    <input type="button" value="Сбросить сортировку">
+</form>
 
-<hr>
-
-<table class="places-table">
-    <thead class="places-table__head">
-    <tr class="places-table__row">
-        <th>Название</th>
-        <th>Год</th>
-        <th>Адрес</th>
-        <th>Район</th>
-        <th>Тип</th>
-        <th>Широта</th>
-        <th>Долгота</th>
-    </tr>
-    </thead>
-    <tbody class="places-table__body" id="places-table__body">
-
-    </tbody>
-</table>
+<table id="list"></table>
 
 </body>
 </html>

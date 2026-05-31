@@ -34,7 +34,7 @@ const dataFilter = (dataForm) => {
 
 const filterTable = (data, idTable, dataForm) => {
     const datafilter = dataFilter(dataForm);
-    console.log(datafilter);
+
     if (Object.values(datafilter).toString() === ['Найти', '', '', '', '', -Infinity, Infinity, -Infinity, Infinity, 'Очистить фильтры'].toString()) {
         clearTable(idTable);
         quickHeader(data, idTable);
@@ -43,21 +43,23 @@ const filterTable = (data, idTable, dataForm) => {
             let result = true;
             Object.entries(item).forEach(([key, val]) => {
 
-                if (typeof val == 'string') {
-                    result &&= val.toLowerCase().includes(datafilter[correspond[key]]);
-                } else if (typeof val == 'number') {
-                    if (key === "Год") {
-                        result &&= val >= datafilter.yearFrom && val <= datafilter.yearTo;
-                    } else if (key === "Высота") {
-                        result &&= val >= datafilter.heightFrom && val <= datafilter.heightTo;
-                    }
+                if (key === "Год") {
+                    result &&= val >= datafilter.yearFrom && val <= datafilter.yearTo;
+                } else if (key === "Высота") {
+                    result &&= val >= datafilter.heightFrom && val <= datafilter.heightTo;
+                } else {
+                    result &&= String(val).toLowerCase().includes(datafilter[correspond[key]]);
                 }
             });
 
             return result;
         });
         clearTable(idTable);
-        createTable(tableFilter, idTable);
+        if (tableFilter.length === 0) {
+            quickHeader(data, idTable);
+        } else {
+            createTable(tableFilter, idTable);
+        }
     }
 }
 

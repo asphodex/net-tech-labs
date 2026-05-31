@@ -1,0 +1,93 @@
+.App {
+  //text-align: center;
+  padding: 10px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.table-row {
+  padding: 10px;
+  border: 1px solid #bbb;
+}
+
+.table-header {
+  padding: 10px;
+  border: 1px solid #bbb;
+  background-color: #ddd;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: table-row;
+}
+
+.pageNum {
+  padding: 5px;
+  margin: 5px;
+}
+
+.pageNum:hover {
+  cursor: pointer;
+  color: #0000ff;
+}
+
+.pageNum-current {
+  font-weight: bold;
+  color: #0000ff;
+  font-size: 20px;
+}
+
+.filter-form {
+  display: grid;
+  grid-template-columns: 100px 220px;
+  gap: 10px;
+}
+
+.filter-label {
+  text-align: right;
+}
+
+.filter-actions {
+  grid-column: 1 / 3;
+  margin: 10px;
+}

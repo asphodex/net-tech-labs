@@ -1,0 +1,11 @@
+table {
+    background: gray;
+}
+
+table th{
+    background: gray;
+}
+
+table td{
+    background: gainsboro;
+}

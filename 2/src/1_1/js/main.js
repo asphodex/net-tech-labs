@@ -64,10 +64,9 @@ const changeNextSelect = (curSelect, nextSelectId) => {
     nextSelect.disabled = false;
     
     nextSelect.innerHTML = curSelect.innerHTML;
-    console.log(nextSelect.innerHTML);
-    
+
     if (curSelect.value != 0) {
-       nextSelect.remove(curSelect.value);
+        nextSelect.remove(curSelect.selectedIndex);
     } else {
         nextSelect.disabled = true;
     }

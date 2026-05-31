@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>База данных - Достопримечательности Владивостока</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/sort.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<p>
+    <a href="index.html">Главная</a> |
+    <a href="data.html">База данных</a>
+</p>
+
+<h1>База данных достопримечательностей</h1>
+
+<div id="settings">
+    <div>
+        <p>Значение по оси OX:<br>
+            <label>
+                Район
+                <input type="radio" name="keyX" value="Район" checked>
+            </label>
+            <br>
+            <label>
+                Тип
+                <input type="radio" name="keyX" value="Тип">
+            </label>
+        </p>
+    </div>
+    <div id="err">
+        <p>Значение по оси OY:<br>
+            <input type="checkbox" id="minAge" value="minAge">
+            <label for="minAge">Минимальный возраст</label><br>
+            <input type="checkbox" id="maxAge" value="maxAge">
+            <label for="maxAge">Максимальный возраст</label><br>
+            <input type="checkbox" id="avgAge" value="avgAge">
+            <label for="avgAge">Средний возраст</label><br>
+        </p>
+    </div>
+    <div>
+        <p>Тип графика:<br>
+            <select id="typeGraph">
+                <option value="dot" selected>Точечная</option>
+                <option value="line">График</option>
+                <option value="bar">Столбчатая</option>
+            </select>
+        </p>
+    </div>
+    <div class="button">
+        <input type="button" id="buildBtn" value="Построить" >
+    </div>
+</div>
+
+<form id="filter">
+    <p>
+        <label for="name">Название:</label>
+        <input type="text" id="name">
+    </p>
+    <p>
+        <label for="yearFrom">Год:</label>
+        от <input type="number" id="yearFrom">
+        до <input type="number" id="yearTo">
+    </p>
+    <p>
+        <label for="address">Адрес:</label>
+        <input type="text" id="address">
+    </p>
+    <p>
+        <label for="district">Район:</label>
+        <input type="text" id="district">
+    </p>
+    <p>
+        <label for="type">Тип:</label>
+        <input type="text" id="type">
+    </p>
+    <p>
+        <label for="latFrom">Широта:</label>
+        от <input type="number" id="latFrom" step="0.0001">
+        до <input type="number" id="latTo" step="0.0001">
+    </p>
+    <p>
+        <label for="lonFrom">Долгота:</label>
+        от <input type="number" id="lonFrom" step="0.0001">
+        до <input type="number" id="lonTo" step="0.0001">
+    </p>
+    <input type="button" value="Найти" id="filter__button">
+    <input type="button" value="Очистить фильтры" id="filter__button-clear">
+</form>
+
+<form id="sort">
+    <p>Сортировать по</p>
+    <p>
+        <select id="fieldsFirst"></select>
+        по убыванию? <input type="checkbox" id="fieldsFirstDesc">
+    </p>
+    <p>
+        <select id="fieldsSecond"></select>
+        по убыванию? <input type="checkbox" id="fieldsSecondDesc">
+    </p>
+    <p>
+        <select id="fieldsThird"></select>
+        по убыванию? <input type="checkbox" id="fieldsThirdDesc">
+    </p>
+    <input type="button" value="Сортировать">
+    <input type="button" value="Сбросить сортировку">
+</form>
+
+<table id="list"></table>
+
+</body>
+</html>

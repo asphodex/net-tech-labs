@@ -4,7 +4,7 @@ const createSortArr = (data) => {
     
     for (const item of sortSelects) {   
         const keySort = item.value;
-        if (keySort == 0) {
+        if (keySort === 0) {
             break;
         }
         const desc = document.getElementById(item.id + 'Desc').checked;
